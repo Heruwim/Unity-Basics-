@@ -19,5 +19,10 @@ public class PlayerMovement : MonoBehaviour
         {
             _rigidbody.AddForce(-_sidewayForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
+
+        if(_rigidbody.position.y < -1f)
+        {
+            FindObjectOfType<GameManager>().EndGame();
+        }
     }
 }
