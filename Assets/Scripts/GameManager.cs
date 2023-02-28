@@ -4,8 +4,15 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private float _restartDelay = 1f;
+    [SerializeField] private GameObject _completeLevelUI;
 
     private bool _gemeHasEnding = false;
+
+    public void CompleteLevel()
+    {
+        _completeLevelUI.SetActive(true);
+    }
+
     public void EndGame()
     {
         if (_gemeHasEnding == false)
